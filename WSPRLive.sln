@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1704.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSPRLive", "WSPRLive\WSPRLive.csproj", "{BDFB77B6-F69A-41C0-B258-9C8310D36201}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WSPRLiveTester", "WSPRLiveTester\WSPRLiveTester.csproj", "{1FC80B86-4212-477A-943D-9C1E3078DE20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BDFB77B6-F69A-41C0-B258-9C8310D36201}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDFB77B6-F69A-41C0-B258-9C8310D36201}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDFB77B6-F69A-41C0-B258-9C8310D36201}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDFB77B6-F69A-41C0-B258-9C8310D36201}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FC80B86-4212-477A-943D-9C1E3078DE20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FC80B86-4212-477A-943D-9C1E3078DE20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FC80B86-4212-477A-943D-9C1E3078DE20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FC80B86-4212-477A-943D-9C1E3078DE20}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4C0A027A-BDFE-4056-9907-E277692B9465}
+	EndGlobalSection
+EndGlobal
