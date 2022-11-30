@@ -7,6 +7,8 @@ namespace WSPRLive;
 
 public class Client
 {
+    private const string DEFAULT_HOST = "db1.wspr.live";
+
     private List<string> _wsprLiveHosts;
     private JsonSerializerOptions _jsonSerializerOptions;
 
@@ -17,7 +19,7 @@ public class Client
         _jsonSerializerOptions = InitJsonSettings();
     }
 
-    public Client(string host = "db1.wspr.live")
+    public Client(string host = DEFAULT_HOST)
     {
         _wsprLiveHosts = new List<string>();
         _wsprLiveHosts.Add(host);
@@ -128,6 +130,9 @@ public class Client
             var result = _httpClient.GetStringAsync("https://wspr.live/endpoints.txt")
             .GetAwaiter().GetResult();
 
+            if (string.IsNullOrEmpty(result))
+                result = DEFAULT_HOST;
+
             var list = result
                 .Split(Environment.NewLine, StringSplitOptions.RemoveEmptyEntries)
                 .ToList();
@@ -144,20 +149,11 @@ public class Client
         {
             using (var _httpClient = new HttpClient())
             {
-                int retry = 5;
-
                 _httpClient.BaseAddress = new Uri($"https://{host}");
                 
-                do
-                {
-                    if (retry != 5)
-                        await Task.Delay(1000);
+                var path = $"/?query={query} FORMAT JSON";
+                response = await _httpClient.GetAsync(path);
 
-                    var uri = $"/?query={query} FORMAT JSON";
-                    response = await _httpClient.GetAsync(uri);
-
-                    retry--;
-                } while (response.StatusCode != HttpStatusCode.OK && retry > 0);
 
                 if (response.StatusCode == HttpStatusCode.OK)
                     break;
